@@ -62,8 +62,9 @@ export default function AddressDirectory() {
   const filteredAddresses = useMemo(() => {
     if (!searchTerm) return addresses;
     return addresses.filter(address =>
-      address.homesteadhead?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      address.zone?.toLowerCase().includes(searchTerm.toLowerCase())
+      address.homenumber?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      address.zone?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      address.street?.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [addresses, searchTerm]);
 
@@ -161,7 +162,7 @@ export default function AddressDirectory() {
                 <div className="flex items-start gap-4">
                   <div className="mt-1">{getTypeIcon(address.type)}</div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-xl mb-1">{address.zone}, {address.homenumber}</div>
+                    <div className="font-semibold text-xl mb-1">{address.street}, {address.homenumber}</div>
                     <div className="text-gray-600 dark:text-gray-400">
                       {address.area},{address.zone}
                     </div>

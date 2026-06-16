@@ -163,7 +163,7 @@ export default function AddressDirectory() {
                   <div className="flex-1 min-w-0">
                     <div className="font-semibold text-xl mb-1">{address.zone}, {address.homenumber}</div>
                     <div className="text-gray-600 dark:text-gray-400">
-                      {address.zone}, Eswatini
+                      {address.area},{address.zone}
                     </div>
                     <div className="mt-4 flex justify-between items-center text-sm">
                       <span className="text-gray-500 dark:text-gray-400">
@@ -223,7 +223,11 @@ export default function AddressDirectory() {
             <div className="p-6 space-y-6">
               <div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Address</p>
-                <p className="text-2xl font-semibold mt-1">{selectedAddress.zone}, {selectedAddress.homenumber}</p>
+                <p className="text-2xl font-semibold mt-1">{selectedAddress.street}, {selectedAddress.homenumber}</p>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Area</p>
+                <p className="text-2xl font-semibold mt-1">{selectedAddress.area}</p>
               </div>
               <div className="grid grid-cols-2 gap-6">
                 <div><p className="text-sm text-gray-500 dark:text-gray-400">Zone</p><p className="font-medium">{selectedAddress.zone}</p></div>

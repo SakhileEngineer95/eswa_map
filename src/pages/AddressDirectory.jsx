@@ -223,7 +223,7 @@ export default function AddressDirectory() {
             <div className="p-6 space-y-6">
               <div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Address</p>
-                <p className="text-2xl font-semibold mt-1">{address.zone}, {address.homenumber}</p>
+                <p className="text-2xl font-semibold mt-1">{selectedAddress.zone}, {selectedAddress.homenumber}</p>
               </div>
               <div className="grid grid-cols-2 gap-6">
                 <div><p className="text-sm text-gray-500 dark:text-gray-400">Zone</p><p className="font-medium">{selectedAddress.zone}</p></div>

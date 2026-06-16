@@ -143,7 +143,7 @@ export default function AddressDirectory() {
           </div>
           <input
             type="text"
-            placeholder="Search by home owner, home number, zone..."
+            placeholder="Search by home address..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-11 pr-4 py-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-3xl text-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 shadow-sm"
@@ -164,7 +164,7 @@ export default function AddressDirectory() {
                   <div className="flex-1 min-w-0">
                     <div className="font-semibold text-xl mb-1">{address.street}, {address.homenumber}</div>
                     <div className="text-gray-600 dark:text-gray-400">
-                      {address.area},{address.zone}
+                      {address.area}, {address.zone}
                     </div>
                     <div className="mt-4 flex justify-between items-center text-sm">
                       <span className="text-gray-500 dark:text-gray-400">

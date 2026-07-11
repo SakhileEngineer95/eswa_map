@@ -171,7 +171,7 @@ export default function AddressDirectory() {
                         Updated {new Date(address.created_at).toLocaleDateString()}
                       </span>
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        'residential' === 'commercial'
+                        address.homesteadhead === 'lounge'
                           ? 'bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-400'
                           : 'bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400'
                       }`}>

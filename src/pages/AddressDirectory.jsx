@@ -175,7 +175,7 @@ export default function AddressDirectory() {
                           ? 'bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-400'
                           : 'bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400'
                       }`}>
-                        Residenntial
+                        {address.homesteadhead.includes('Lounge') ? Commercial : Residenntial}
                       </span>
                     </div>
                   </div>

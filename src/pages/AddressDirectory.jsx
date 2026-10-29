@@ -160,25 +160,27 @@ export default function AddressDirectory() {
                 onClick={() => openModal(address)}
                 className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md active:scale-[0.985] cursor-pointer transition-all"
               >
-                <div className="flex items-start gap-4">
-                  { address.type === 'commercial' && <img src= {address.image} className='w-35 h-30 rounded-sm' alt='image'/>}
-                  <div className="mt-1">{getTypeIcon(address.type)}</div>
-                  <div className="flex-1 min-w-0">
-                    { address.type === 'commercial'  ? <div className="font-semibold text-xl mb-1">{address.homesteadhead}, {address.homenumber}</div> : <div className="font-semibold text-xl mb-1">{address.street}, {address.homenumber}</div> }
-                    <div className="text-gray-600 dark:text-gray-400">
-                      {address.area}, {address.zone}
-                    </div>
-                    <div className="mt-4 flex justify-between items-center text-sm">
-                      <span className="text-gray-500 dark:text-gray-400">
-                        Updated {new Date(address.created_at).toLocaleDateString()}
-                      </span>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        address.type === 'commercial'
-                          ? 'bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-400'
-                          : 'bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400'
-                      }`}>
-                        {address.type === 'commercial' ? 'Commercial' : 'Residenntial'}
-                      </span>
+                <div className="flex flex-col lg:flex-row  items-start gap-4">
+                  { address.type === 'commercial' && <img src= {address.image} className='w-full h-55 lg:w-35 lg:h-30 rounded-sm' alt='image'/>}
+                  <div className='flex items-start gap-4'>
+                    <div className="mt-1">{getTypeIcon(address.type)}</div>
+                    <div className="flex-1 min-w-0">
+                      { address.type === 'commercial'  ? <div className="font-semibold text-xl mb-1">{address.homesteadhead}, {address.homenumber}</div> : <div className="font-semibold text-xl mb-1">{address.street}, {address.homenumber}</div> }
+                      <div className="text-gray-600 dark:text-gray-400">
+                        {address.area}, {address.zone}
+                      </div>
+                      <div className="mt-4 flex justify-between items-center text-sm">
+                        <span className="text-gray-500 dark:text-gray-400">
+                          Updated {new Date(address.created_at).toLocaleDateString()}
+                        </span>
+                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                          address.type === 'commercial'
+                            ? 'bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-400'
+                            : 'bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400'
+                        }`}>
+                          {address.type === 'commercial' ? 'Commercial' : 'Residenntial'}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>

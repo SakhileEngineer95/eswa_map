@@ -64,7 +64,8 @@ export default function AddressDirectory() {
     return addresses.filter(address =>
       address.homenumber?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       address.zone?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      address.street?.toLowerCase().includes(searchTerm.toLowerCase())
+      address.street?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      address.homesteadhead?.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }, [addresses, searchTerm]);
 
@@ -160,9 +161,10 @@ export default function AddressDirectory() {
                 className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md active:scale-[0.985] cursor-pointer transition-all"
               >
                 <div className="flex items-start gap-4">
+                  { address.type === 'commercial' && <img src= {address.image} className='w-35 h-30 rounded-sm' alt='image'/>}
                   <div className="mt-1">{getTypeIcon(address.type)}</div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-xl mb-1">{address.street}, {address.homenumber}</div>
+                    { address.type === 'commercial'  ? <div className="font-semibold text-xl mb-1">{address.homesteadhead}, {address.homenumber}</div> : <div className="font-semibold text-xl mb-1">{address.street}, {address.homenumber}</div> }
                     <div className="text-gray-600 dark:text-gray-400">
                       {address.area}, {address.zone}
                     </div>
@@ -171,11 +173,11 @@ export default function AddressDirectory() {
                         Updated {new Date(address.created_at).toLocaleDateString()}
                       </span>
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        address.homesteadhead.includes('Lounge')
+                        address.type === 'commercial'
                           ? 'bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-400'
                           : 'bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-400'
                       }`}>
-                        {address.homesteadhead.includes('Lounge') ? 'Commercial' : 'Residenntial'}
+                        {address.type === 'commercial' ? 'Commercial' : 'Residenntial'}
                       </span>
                     </div>
                   </div>

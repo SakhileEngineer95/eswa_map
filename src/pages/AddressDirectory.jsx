@@ -161,7 +161,7 @@ export default function AddressDirectory() {
                 className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:shadow-md active:scale-[0.985] cursor-pointer transition-all"
               >
                 <div className="flex flex-col lg:flex-row  items-start gap-4">
-                  { address.type === 'commercial' && <img src={address.image ? 'https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg' : address.image} className='w-full h-55 lg:w-35 lg:h-30 rounded-sm' alt='image'/>}
+                  { address.type === 'commercial' && <img src={address.image == null ? 'https://community.softr.io/uploads/db9110/original/2X/7/74e6e7e382d0ff5d7773ca9a87e6f6f8817a68a6.jpeg' : address.image} className='w-full h-55 lg:w-35 lg:h-30 rounded-sm' alt='image'/>}
                   <div className='flex items-start gap-4'>
                     <div className="mt-1">{getTypeIcon(address.type)}</div>
                     <div className="flex-1 min-w-0">
